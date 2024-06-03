@@ -1,5 +1,5 @@
-import react from "react";
-import { useNavigate } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 
 /**
  * Props:
@@ -10,17 +10,13 @@ import { useNavigate } from "react-router-dom";
  *
  * App > Vending Machine > Snack
  */
-function Snack({ imageUrl, snackName }) {
-  const navigate = useNavigate();
-  function handleClick() {
-    navigate("/");
-  }
+function Snack({ imgUrl, snackName }) {
 
   return (
-    <div>
+    <div className="Snack">
       <h1>{snackName}</h1>
-      <img src={imageUrl} />
-      <button onClick={handleClick}>Go Back</button>
+      <img src={imgUrl} />
+      <h1><Link to="/">Go back</Link></h1>
     </div>
   );
 }
